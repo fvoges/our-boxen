@@ -7,8 +7,10 @@ class people::fvoges {
   }
 
   include people::fvoges::applications
+  include people::fvoges::dock
   include people::fvoges::dotfiles
   include people::fvoges::gitconfig
+  include people::fvoges::params
   include people::fvoges::preferences
   include people::fvoges::puppetlabs
 }

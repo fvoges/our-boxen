@@ -1,4 +1,9 @@
-class people::fvoges::puppetlabs {
+class people::fvoges::puppetlabs (
+    $my_homedir   = $people::fvoges::params::my_homedir,
+    $my_sourcedir = $people::fvoges::params::my_sourcedir,
+    $my_username  = $people::fvoges::params::my_username,
+    $my_email     = $people::fvoges::params::my_email
+    ){
 
   include hipchat
 
@@ -22,5 +27,5 @@ class people::fvoges::puppetlabs {
     target  => "$src/puppet/ext/envpuppet",
     require => [ Repository["$src/puppet"], File['/usr/local/bin'] ];
   }
-  
+
 }

@@ -1,4 +1,9 @@
-class people::fvoges::dotfiles {
+class people::fvoges::dotfiles (
+    $my_homedir   = $people::fvoges::params::my_homedir,
+    $my_sourcedir = $people::fvoges::params::my_sourcedir,
+    $my_username  = $people::fvoges::params::my_username,
+    $my_email     = $people::fvoges::params::my_email
+    ){
 
   $home     = "/Users/${::boxen_user}"
   $dotfiles = "${boxen::config::srcdir}/dotfiles"

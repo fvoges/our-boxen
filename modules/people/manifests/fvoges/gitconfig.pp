@@ -1,4 +1,9 @@
-class people::fvoges::gitconfig {
+class people::fvoges::gitconfig (
+    $my_homedir   = $people::fvoges::params::my_homedir,
+    $my_sourcedir = $people::fvoges::params::my_sourcedir,
+    $my_username  = $people::fvoges::params::my_username,
+    $my_email     = $people::fvoges::params::my_email
+    ){
   
   git::config::global {
     'user.name':    value => 'Federico Voges';
