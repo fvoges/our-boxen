@@ -1,41 +1,50 @@
-class people::fvoges::dotfiles {
+class people::fvoges::dotfiles (
+    $my_homedir   = $people::fvoges::params::my_homedir,
+    $my_sourcedir = $people::fvoges::params::my_sourcedir,
+    $my_username  = $people::fvoges::params::my_username,
+    $my_email     = $people::fvoges::params::my_email
+    ){
 
   $home     = "/Users/${::boxen_user}"
   $dotfiles = "${boxen::config::srcdir}/dotfiles"
 
   repository {
     "$dotfiles":
-      source => 'fvoges/dotfiles';
+      source => 'fvoges/puppetlabs-rcfiles';
   }
 
-  vim::bundle { [
-    'tpope/vim-sensible'
-  ]: }
+#  vim::bundle { [
+#    'tpope/vim-sensible'
+#  ]: }
 
   file {
     "$home/.tmux.conf":
-      target  => "$dotfiles/home/.tmux.conf",
+      target  => "$dotfiles/tmux.conf",
+      require => Repository["$dotfiles"];
+    "$home/.vim":
+      target  => "$dotfiles/vim",
+      force   => true,
       require => Repository["$dotfiles"];
     "$home/.vimrc":
-      target  => "$dotfiles/home/.vimrc",
+      target  => "$dotfiles/vimrc",
       require => Repository["$dotfiles"];
-    "$home/.profile":
-      target  => "$dotfiles/home/.profile",
+    "$home/.screenrc":
+      target  => "$dotfiles/screenrc",
       require => Repository["$dotfiles"];
-    "$home/.inputrc":
-      target  => "$dotfiles/home/.inputrc",
-      require => Repository["$dotfiles"];
-    "$home/.bash_aliases":
-      target  => "$dotfiles/home/.bash_aliases",
-      require => Repository["$dotfiles"];
+#    "$home/.inputrc":
+#      target  => "$dotfiles/home/.inputrc",
+#      require => Repository["$dotfiles"];
+#    "$home/.bash_aliases":
+#      target  => "$dotfiles/home/.bash_aliases",
+#      require => Repository["$dotfiles"];
     "$home/.bashrc":
-      target  => "$dotfiles/home/.bashrc",
+      target  => "$dotfiles/bashrc",
       require => Repository["$dotfiles"];
-    "$home/.ssh":
-      ensure => directory;
-    "$home/.ssh/config":
-      target  => "$dotfiles/home/.ssh/config",
-      require => [ File["$home/.ssh"], Repository["$dotfiles"] ];
+#    "$home/.ssh":
+#      ensure => directory;
+#    "$home/.ssh/config":
+#      target  => "$dotfiles/home/.ssh/config",
+#      require => [ File["$home/.ssh"], Repository["$dotfiles"] ];
   }
 
 }
