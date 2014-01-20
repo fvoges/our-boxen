@@ -40,8 +40,6 @@ class people::fvoges::applications (
 #    license => "/Users/${::luser}/Dropbox/Config/Vagrant/fusion-6-license.lic";
 #  }
 
-
-
   package { [
     'apg',
     'graphviz',
