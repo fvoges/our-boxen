@@ -17,14 +17,15 @@ class people::fvoges::applications (
   include googledrive
   include gpgtools
   include hub
-  include iterm2::dev
   include istatmenus4
+  include iterm2::dev
   include java
   include lastpass
   include omnifocus
   include omnigraffle::pro
   include python
   include skype
+  include spotify
   include steam
   include tunnelblick::beta
   include vagrant
@@ -39,8 +40,6 @@ class people::fvoges::applications (
 #  vagrant::plugin { 'vagrant-vmware-fusion':
 #    license => "/Users/${::luser}/Dropbox/Config/Vagrant/fusion-6-license.lic";
 #  }
-
-
 
   package { [
     'apg',
