@@ -29,9 +29,20 @@ File {
   owner => $boxen_user
 }
 
-Package {
-  provider => homebrew,
-  require  => Class['homebrew']
+# XXX fugly hack
+# Homebrew binary packages don't work well on older hardware
+# So we tell homebrew to compile everything (yes, on slower hw)
+if ($::sp_machine_model == 'MacBookPro6,2') {
+  Package {
+    provider        => homebrew,
+    install_options => "--fresh",
+    require         => Class['homebrew']
+  }
+} else {
+  Package {
+    provider => homebrew,
+    require  => Class['homebrew']
+  }
 }
 
 Repository {
