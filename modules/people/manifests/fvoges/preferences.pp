@@ -54,6 +54,10 @@ class people::fvoges::preferences (
       domain => 'com.apple.finder',
       key    => 'ShowStatusBar',
       value  => 'YES';
+    'Enable NetaTalk for Time Machine':
+      domain => 'com.apple.systempreferences',
+      key    => 'TMShowUnsupportedNetworkVolumes',
+      value  => '1';
     #'Lower Left Hot Corner: Start Screen Saver':
     #  user   => "${::boxen_user}",
     #  key    => 'wvous-bl-corner',
