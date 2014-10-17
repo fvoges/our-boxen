@@ -20,8 +20,8 @@ class people::fvoges::gitconfig (
     'alias.m':      value => 'commit -m';
     'alias.cam':    value => 'commit -a -m';
     'alias.d':      value => 'diff';
-    'alias.ds':     value => 'diff --stat';
-    'alias.l':      value => 'log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit --date=relative';
+    'alias.ds':     value => '"diff --stat"';
+    'alias.l':      value => '"log --graph --pretty=format:\'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset\' --abbrev-commit --date=relative"';
     'alias.l1':     value => 'log --pretty=oneline';
     'alias.s':      value => 'status';
   }

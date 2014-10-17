@@ -17,10 +17,10 @@ class people::fvoges::puppetlabs (
       source => 'puppetlabs/facter';
   }
 
-  ruby::gem { "showoff for $globalruby":
-    gem     => 'showoff',
-    ruby    => "$globalruby",
-    version => '>= 0.9.7';
+  ruby_gem { "showoff for $globalruby":
+    gem          => 'showoff',
+    ruby_version => "$globalruby",
+    version      => '>= 0.9.7';
   }
 
   file { '/usr/local/bin/envpuppet':

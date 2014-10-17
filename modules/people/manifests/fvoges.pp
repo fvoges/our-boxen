@@ -2,9 +2,9 @@ class people::fvoges {
 
   $globalruby = '2.0.0'
 
-  class { 'ruby::global':
-    version => "$globalruby"
-  }
+  #  class { 'ruby::global':
+  #  version => "$globalruby"
+  #}
 
   include people::fvoges::applications
   include people::fvoges::dock

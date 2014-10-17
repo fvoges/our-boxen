@@ -16,53 +16,46 @@ class people::fvoges::dock (
     require  => Class['chrome'],
   }
 
-  dockutil::item { 'add SubEthaEdit':
-    item     => '/Applications/Subethaedit.app',
-    label    => 'SubEthaEdit',
-    position => 2,
-    action   => 'add',
-  }
-
   dockutil::item { 'Add iTerm':
     item     => '/Applications/iTerm.app',
     label    => 'iTerm',
     action   => 'add',
-    position => 3,
-    require  => Class['iterm2::dev'],
+    position => 2,
+    require  => Class['iterm2::stable'],
   }
 
   dockutil::item { 'Add Activity Monitor':
     item     => '/Applications/Utilities/Activity Monitor.app',
     label    => 'Activity Monitor',
-    position => 4,
+    position => 3,
     action   => 'add',
   }
 
   dockutil::item { 'Add Adium':
     item     => '/Applications/Adium.app',
     label    => 'Adium',
-    position => 5,
+    position => 4,
     action   => 'add',
   }
 
   dockutil::item { 'Add HipChat':
     item     => '/Applications/HipChat.app',
     label    => 'HipChat',
-    position => 6,
+    position => 5,
     action   => 'add',
   }
 
   dockutil::item { 'Add Skype':
     item     => '/Applications/Skype.app',
     label    => 'Skype',
-    position => 7,
+    position => 6,
     action   => 'add',
   }
 
   dockutil::item { 'Add VMWare Fusion':
     item     => "/Applications/VMware Fusion.app",
     label    => 'VMWare Fusion',
-    position => 8,
+    position => 7,
     action   => "add",
   }
 
@@ -154,6 +147,24 @@ class people::fvoges::dock (
   dockutil::item { 'Remove iPhoto':
     item   => "/Applications/iPhoto.app",
     label  => "iPhoto",
+    action => "remove",
+  }
+
+  dockutil::item { 'Remove Pages':
+    item   => "/Applications/Pages.app",
+    label  => "Pages",
+    action => "remove",
+  }
+
+  dockutil::item { 'Remove Numbers':
+    item   => "/Applications/Numbers.app",
+    label  => "Numbers",
+    action => "remove",
+  }
+
+  dockutil::item { 'Remove Keynote':
+    item   => "/Applications/Keynote.app",
+    label  => "Keynote",
     action => "remove",
   }
 
