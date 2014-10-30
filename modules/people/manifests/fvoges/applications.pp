@@ -79,6 +79,7 @@ class people::fvoges::applications (
     'rake-completion',
     'rsync',
     'ruby-completion',
+    'ssh-copy-id',
     'tmux',
     'tree',
     'unrar',
