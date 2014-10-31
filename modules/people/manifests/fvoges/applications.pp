@@ -50,9 +50,12 @@ class people::fvoges::applications (
 #    license => "/Users/${::luser}/Dropbox/Config/Vagrant/fusion-6-license.lic";
 #  }
 
-  homebrew::tap { 'homebrew/dupes': }
   homebrew::tap { 'homebrew/binary': }
-
+  homebrew::tap { 'homebrew/boneyard': }
+  homebrew::tap { 'homebrew/completions': }
+  homebrew::tap { 'homebrew/dupes': }
+  homebrew::tap { 'homebrew/versions': }
+  homebrew::tap { 'phinze/cask': }
 
   package { [
     'apg',
@@ -62,13 +65,21 @@ class people::fvoges::applications (
     'ccze',
     'colordiff',
     'coreutils',
+    'dos2unix',
     'ec2-api-tools',
+    'ffmpeg',
+    'gawk',
+    'gcc46',
+    'gem-completion',
     'git-extras',
     'git-flow',
     'graphviz',
     'htop-osx',
+    'hub',
     'imagemagick',
     'ipcalc',
+    'libksba',
+    'libyaml',
     'lynx',
     'mercurial',
     'midnight-commander',
@@ -76,13 +87,18 @@ class people::fvoges::applications (
     'nmap',
     'packer',
     'pstree',
+    'python',
+    'qt',
     'rake-completion',
+    'rbenv',
     'rsync',
+    'ruby-build',
     'ruby-completion',
     'ssh-copy-id',
     'tmux',
     'tree',
     'unrar',
+    'vagrant-completion',
     'watch',
     'wget',
     'xorriso',
