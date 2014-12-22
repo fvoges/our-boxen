@@ -52,9 +52,8 @@ class people::fvoges::applications (
 
   homebrew::tap { 'homebrew/binary': }
   homebrew::tap { 'homebrew/boneyard': }
-  homebrew::tap { 'homebrew/completions': }
   homebrew::tap { 'homebrew/dupes': }
-  homebrew::tap { 'homebrew/versions': }
+  #homebrew::tap { 'homebrew/versions': }
   homebrew::tap { 'phinze/cask': }
 
   package { [
@@ -75,7 +74,6 @@ class people::fvoges::applications (
     'git-flow',
     'graphviz',
     'htop-osx',
-    'hub',
     'imagemagick',
     'ipcalc',
     'libksba',
@@ -98,7 +96,6 @@ class people::fvoges::applications (
     'tmux',
     'tree',
     'unrar',
-    'vagrant-completion',
     'watch',
     'wget',
     'xorriso',
@@ -159,8 +156,7 @@ class people::fvoges::applications (
   # Aply this patch:
   # https://github.com/puppetlabs/puppet/commit/097e9fdd91d5480e0d80adc78a99cd363855a2de
   # to /opt/boxen/repo/.bundle/ruby/2.0.0/gems/puppet-*/lib/puppet/provider/package/appdmg.rb
-  #  package {
-  #   'Moom':
+  #  package { 'Moom':
   #    provider => appdmg,
   #    source   => "http://manytricks.com/download/moom";
   #}
